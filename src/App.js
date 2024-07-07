@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useParams,
+} from "react-router-dom";
+import PostsDisplay from "./Pages/PostsDisplay";
+import PostForm from "./components/PostForm";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [posts, setPosts] = useState([]);
+
+    const addPost = (post) => {
+        setPosts([...posts, post]);
+    };
+
+    const updatePost = (index, updatedPost) => {
+        const newPosts = [...posts];
+        newPosts[index] = updatedPost;
+        setPosts(newPosts);
+    };
+
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<PostsDisplay posts={posts} />} />
+                <Route path="/create" element={<PostForm onSave={addPost} />} />
+                <Route
+                    path="/edit/:index"
+                    element={
+                        <EditPostWrapper posts={posts} onSave={updatePost} />
+                    }
+                />
+            </Routes>
+        </Router>
+    );
+};
+
+const EditPostWrapper = ({ posts, onSave }) => {
+    const { index } = useParams();
+    const post = posts[parseInt(index, 10)];
+
+    return (
+        <PostForm
+            post={post}
+            onSave={(updatedPost) => onSave(parseInt(index, 10), updatedPost)}
+        />
+    );
+};
 
 export default App;
