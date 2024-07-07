@@ -1,0 +1,9 @@
+.postlist {
+    display: flex;
+    background-color: black;
+
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    min-height: 100vh;
+}

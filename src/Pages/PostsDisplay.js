@@ -2,12 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PostsList from "../components/PostList";
 
-const PostsDisplay = ({ posts }) => {
+import "./postdisplay.css";
+
+const PostsDisplay = ({ posts, onDelete }) => {
     return (
-        <div>
-            <h1>Posts</h1>
-            <PostsList posts={posts} />
-            <Link to="/create">Create Post</Link>
+        <div className="main">
+            <div className="header">
+                <h1>Posts</h1>
+                <Link to="/create" className="create">
+                    Create Post
+                </Link>
+            </div>
+            {posts.length === 0 ? (
+                <h1>No Posts Available</h1>
+            ) : (
+                <PostsList posts={posts} onDelete={onDelete} />
+            )}
         </div>
     );
 };

@@ -1,0 +1,111 @@
+.post {
+    width: 300px;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    border-radius: 5px;
+    background-color: #fff;
+}
+textarea {
+    color: dodgerblue;
+}
+p {
+    color: darkorange;
+    font-weight: bold;
+}
+
+h3 {
+    color: rgb(238, 241, 10);
+}
+
+.link {
+    text-decoration: none;
+    color: darkslateblue;
+}
+.btn-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    border: none;
+    background-color: rgba(175, 39, 39, 0.452);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-con {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid chocolate;
+    border-radius: 5px;
+}
+
+form > div {
+    display: flex;
+    align-items: center;
+
+    margin: 10px;
+}
+input {
+    margin-left: 20px;
+    color: darkslategrey;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+
+textarea {
+    color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    columns: 20;
+}
+
+button {
+    background-color: goldenrod;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: mediumspringgreen;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: #fff;
+}
+
+label {
+    color: rgb(209, 63, 14);
+    font-weight: bold;
+}
+h1 {
+    text-align: center;
+}

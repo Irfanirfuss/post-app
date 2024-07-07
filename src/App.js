@@ -11,6 +11,11 @@ import PostForm from "./components/PostForm";
 const App = () => {
     const [posts, setPosts] = useState([]);
 
+    const deletePost = (index) => {
+        const newPosts = posts.filter((each, ind) => ind !== index);
+        setPosts(newPosts);
+    };
+
     const addPost = (post) => {
         setPosts([...posts, post]);
     };
@@ -24,7 +29,12 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<PostsDisplay posts={posts} />} />
+                <Route
+                    path="/"
+                    element={
+                        <PostsDisplay posts={posts} onDelete={deletePost} />
+                    }
+                />
                 <Route path="/create" element={<PostForm onSave={addPost} />} />
                 <Route
                     path="/edit/:index"

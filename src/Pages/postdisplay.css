@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    background-color: rgb(192, 207, 103);
+}
+.create {
+    text-decoration: none;
+    color: rgb(108, 34, 226);
+    font-weight: bold;
+    background-color: coral;
+    padding: 5px;
+    border-radius: 5px;
+}
+.create:hover {
+    transform: scale(1.1);
+}
+h1 {
+    color: indigo;
+}
+
+.main {
+    background-color: #000;
+    min-height: 100vh;
+}
+.main > h1 {
+    color: #fff;
+}

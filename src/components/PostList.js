@@ -1,11 +1,16 @@
 import React from "react";
 import Post from "./Post";
-
-const PostsList = ({ posts }) => {
+import "./postlist.css";
+const PostsList = ({ posts, onDelete }) => {
     return (
-        <div>
+        <div className="postlist">
             {posts.map((post, index) => (
-                <Post key={index} post={post} index={index} />
+                <Post
+                    key={index}
+                    post={post}
+                    index={index}
+                    onDelete={onDelete}
+                />
             ))}
         </div>
     );
